@@ -5,3 +5,5 @@ Aluno: Miguel Chaves Becker
 10:02 - Resolvi o Problema Que Afetava os Numeros Binarios Negativos.
 
 17:38 - Resolvi o Problema Dos Numeros Negativos Em Codigo BCD.
+
+17:42 - Resolvi Mais um Erro do Codigo BCD, Erro Basico de Digitação Minha
