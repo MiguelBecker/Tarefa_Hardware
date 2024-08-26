@@ -86,7 +86,7 @@ void base_16(int x) {
 }
 
 void codigo_BCD(int x) {
-  int BCD[32 * 4];
+  int BCD[128];
   int algarismos[32];
   int i = 0;
   int o = 0;
