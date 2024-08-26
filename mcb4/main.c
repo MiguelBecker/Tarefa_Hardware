@@ -8,7 +8,7 @@ void base_2(int x){
     return;
   }
   if (x < 0) {
-    x = (1 << 31) + x;
+    x = (1 << 8) + x;
   }
   while (x > 0) {
     binario[i] = x % 2; 
