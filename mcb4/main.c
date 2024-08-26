@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-void base_2(int x){
-  int binario[32]; 
+void base_2(int x) {
+  int binario[32];
   int i = 0;
-  if(x==0){
+  if (x == 0) {
     printf("\nNúmero em binário: \n0\n");
     return;
   }
@@ -11,8 +11,8 @@ void base_2(int x){
     x = (1 << 8) + x;
   }
   while (x > 0) {
-    binario[i] = x % 2; 
-    x = x / 2;     
+    binario[i] = x % 2;
+    x = x / 2;
     i++;
   }
   printf("\nNúmero em binário: ");
@@ -22,17 +22,17 @@ void base_2(int x){
   printf("\n");
 }
 
-void base_8(int x){
-  int Octal[32]; 
+void base_8(int x) {
+  int Octal[32];
   int i = 0;
-  if(x==0){
+  if (x == 0) {
     printf("\nNúmero em Octal: \n0\n");
     return;
   }
   if (x < 0) {
     while (x != 0) {
-      Octal[i] = -(x % 8); 
-      x = x / 8;     
+      Octal[i] = -(x % 8);
+      x = x / 8;
       i++;
     }
     printf("\nNúmero em Octal: ");
@@ -44,8 +44,8 @@ void base_8(int x){
     return;
   }
   while (x > 0) {
-    Octal[i] = x % 8; 
-    x = x / 8;     
+    Octal[i] = x % 8;
+    x = x / 8;
     i++;
   }
   printf("\nNúmero em Octal: ");
@@ -55,7 +55,7 @@ void base_8(int x){
   printf("\n");
 }
 
-void base_16(int x){
+void base_16(int x) {
   char hexadecimal[32];
   int i = 0;
   if (x == 0) {
@@ -66,9 +66,8 @@ void base_16(int x){
   while (valorConvertido > 0) {
     int resto = valorConvertido % 16;
     if (resto < 10) {
-      hexadecimal[i] = resto + '0'; 
-    } 
-    else {
+      hexadecimal[i] = resto + '0';
+    } else {
       hexadecimal[i] = resto - 10 + 'A';
     }
     valorConvertido /= 16;
@@ -76,8 +75,7 @@ void base_16(int x){
   }
   if (x < 0) {
     printf("\nNúmero em Hexadecimal: -");
-  } 
-  else {
+  } else {
     printf("\nNúmero em Hexadecimal: ");
   }
 
@@ -87,14 +85,19 @@ void base_16(int x){
   printf("\n");
 }
 
-void codigo_BCD(int x){
+void codigo_BCD(int x) {
   int BCD[32 * 4];
   int algarismos[32];
   int i = 0;
   int o = 0;
+  int f = 0;
   if (x == 0) {
     printf("\nNúmero em BCD: 0000\n");
     return;
+  }
+  if (x < 0) {
+    x = x * -1;
+    f++;
   }
   while (x != 0) {
     algarismos[o] = x % 10;
@@ -108,20 +111,23 @@ void codigo_BCD(int x){
       i++;
     }
   }
-    int r = 0;
-    printf("\nNúmero em BCD: ");
-    for (int j = 0; j < i; j++) {
-        printf("%d", BCD[j]);
-        r++;
-        while(r == 4){
-            printf(" ");
-            r = 0;
-        }
+  int r = 0;
+  printf("\nNúmero em BCD: ");
+  if (f > 0) {
+    printf("1101 ");
+  }
+  for (int j = 0; j < i; j++) {
+    printf("%d", BCD[j]);
+    r++;
+    while (r == 4) {
+      printf(" ");
+      r = 0;
     }
-    printf("\n");
+  }
+  printf("\n");
 }
 
-int main(void){
+int main(void) {
   int a;
   scanf("%d", &a);
   base_2(a);
