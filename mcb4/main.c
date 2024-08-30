@@ -153,7 +153,7 @@ void mostrar_bits_float(float num) {
   printf("\nNúmero em float (32 bits):\n");
   printf("Sinal: %u\n", sinal);
   printf("Expoente: %u (com viés)\n", expoente);
-  printf("Mantissa (fração): %u\n", mantissa);
+  printf("fração: %u\n", mantissa);
   printf("\nBits em IEEE 754:\n");
   printf("%u ", sinal);
   for (int i = 7; i >= 0; i--) {
